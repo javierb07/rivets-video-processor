@@ -1,0 +1,76 @@
+html {
+    scroll-behavior: smooth;
+}
+a{
+    color: whitesmoke;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+a:hover{
+    color: whitesmoke;
+}
+
+h1{
+    color: whitesmoke;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+h2{
+    color: whitesmoke;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+h3{
+    color: whitesmoke;
+    text-align: center;
+    font-size: 1.4em;
+}
+div{
+    overflow: hidden;
+}
+p{
+    color: whitesmoke;
+    width: 60%;
+    margin: 0 auto;
+}
+img{
+    object-fit:contain;
+    width: 100%;
+    align-items: stretch;
+}
+.anchor{
+    text-align: center;
+}
+iframe{
+    justify-content: center;
+}
+.iframeparent{
+    text-align:center;
+    width:100%;
+}
+.head{
+    text-align: left;
+    color: whitesmoke;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 1.4em;
+}
+.description{
+    width: 60%;
+    margin: 0 auto;
+}
+div p {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+ul{
+    color: whitesmoke;
+    width: 60%;
+    margin: 0 auto;
+}

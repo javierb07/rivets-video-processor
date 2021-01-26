@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="./public/stylesheets/index.css">
+        <link rel="shortcut icon" type="image/jpg" href="./images/favicon.jpg">
+        <script src="https://kit.fontawesome.com/35a46cbb80.js" crossorigin="anonymous"></script>
+        <title>Rivets Video Processor</title>
+    </head>
+    <body class="bg-dark">
+        <h1>Using Perceptual Grouping and Segmentation to Improve Aviation Maintenance</h1>
+        <hr>
+        <h2>Video and Image Processor</h2>
+        <hr>
+        <section id="section1">
+            <div class="anchor"><a href="#section2"><i class="fas fa-angle-down fa-2x"></i></a></div>
+            <hr>
+            <h3 class="head">Project Description</h3>
+            <hr>
+            <p><i class="fas fa-angle-double-right"></i>
+                One element of all aircraft manufacturer specifications is replacement of damaged rivets.
+                Most aircraft contain hundreds to hundreds of thousands of rivets which makes the human inspection of every rivet
+                on an aircraft a functional impossibility. 
+                The goal of this project is to apply psychology grouping techniques for rivet inspection. This is achieved through a percptual grouping network.
+            </p>
+            <hr>
+            <p><i class="fas fa-angle-double-right"></i>
+                This project consists of a robotic data collection platform (a LEGO EV3 robot with a GoPro camera mounted),
+                 an image processor, and a perceptual grouping network.
+            </p>
+            <hr>
+            <p><i class="fas fa-angle-double-right"></i>
+                These systems working in concert are capable of collecting visual data of aircraft rivets, 
+                separating frames from the video, preparing these frames for the network, 
+                applying perceptual grouping techniques to analyze groups of rivets.
+            </p>
+            <hr>
+            <p><i class="fas fa-angle-double-right"></i>
+                <strong>Presented in this website is the work done in regard to the image processor.</strong>
+                This program takes video input and transforms it into suitable input for the perceptual grouping network.
+                Suitable input for this network has the following characteristics:
+                <ul>
+                    <li>Image consists of only relevant information (i.e. only the rivets will be shown)</li>
+                    <li>Image size must be small enough to allow network computation within reasonable time</li>
+                    <li>Image needs to be clear enough to be informative regarding rivet damage</li>
+                    <li>Rivets orientation must be 45-degrees to make use of grouping direction of the perceptual network</li>
+                </ul>
+            </p>
+            <hr>
+            <p><a href="./Using Perceptual Segmentation to Improve Aviation Maintenance.pdf"><i class="fas fa-file-pdf"></i> Project Report</a></p>
+            <p><a href="./python.html"><i class="fab fa-python"></i> Image processing code</a></p>
+            <hr>
+            <div class="iframeparent">
+                <iframe width="420" height="315"
+                    src="https://www.youtube.com/embed/HY596QAUCDE">
+                </iframe>
+            </div>
+            <hr>
+        </section>
+        <section id="section2">
+            <h3>Partial Output of the Stages of Video Processing Algorithm</h3>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <h3>Normal</h3>
+                        <img src="./images/1-Normal/normal1.bmp" alt="Normal frames" id="normals">
+                        <p>Frames are extracted from the video, so as to not repeat the same rivets</p>
+                    </div>
+                    <div class="col-3">
+                        <h3>Grayscale</h3>
+                        <img src="./images/2-Grayscale/grayscale1.bmp" alt="Grayscale frames" id="grayscales">
+                        <p>The frames are turned into grayscale for further processing</p>
+                    </div>
+                    <div class="col-3">
+                        <h3>Cropped</h3>
+                        <img src="./images/3-Cropped/cropped1.bmp" alt="Cropped frames" id="croppeds">
+                        <p>The image is cropped so as to only include the rivets, this is done through a circle detection algorithm</p>
+                    </div>
+                    <div class="col-3">
+                        <h3>Enhanced Contrast</h3>
+                        <img src="./images/4-Contrast/contrast1.bmp" alt="Contrast frames" id="contrasts">
+                        <p> The contrast is increased in the image, to allow for an easier conversion to black and white</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-3">
+                        <h3>Black and White</h3>
+                        <img src="./images/5-BlackWhite/blackwhite1.bmp" alt="Black and white frames" id="blackwhites">
+                        <p>The image is transformed into black and white with an adequate threshold</p>
+                    </div>
+                    <div class="col-3">
+                        <h3>Resized</h3>
+                        <img src="./images/6-Resized/resized1.bmp" alt="Resized frames" id="resizeds">
+                        <p>Images are resized, decreasing from about 5MB to 250KB</p>
+                    </div>
+                    <div class="col-3">
+                        <h3>Output</h3>
+                        <img src="./images/7-Output/output1.bmp" alt="Output frames" id="outputs">
+                        <p>Finally, the frame is rotated so that the rivets form a 45-degree angle</p>
+                    </div>
+                    <div class="col-3">
+                        <h3>Target</h3>
+                        <img src="./images/8-Target/target1.bmp" alt="Target frames" id="targets">
+                        <p>The target is created by extracting the detected rivets and their coordinates, then drawing them</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="anchor"><a href="#section1"><i class="fas fa-angle-up fa-2x"></i></a></div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+        <script src="./public/scripts/index.js"></script>
+    </body>
+</html>
